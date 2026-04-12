@@ -1,0 +1,54 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+class App
+class AppContext
+class LoginController
+class SignupController
+class UserDashboardController
+class AdminDashboardController
+class AuthService
+class AppointmentService
+class UserStorage
+class InMemoryAppointmentRepository
+interface AppointmentRepository
+interface BookingRuleStrategy
+class DurationBookingRuleStrategy
+class ParticipantLimitRuleStrategy
+class TypeSpecificRuleStrategy
+interface Observer
+class ConsoleNotificationObserver
+interface TimeProvider
+class SystemTimeProvider
+class User
+class Appointment
+class TimeSlot
+class AppointmentType
+class AppointmentStatus
+
+App --> AppContext
+LoginController --> AuthService
+LoginController --> App
+SignupController --> UserStorage
+UserDashboardController --> AppointmentService
+UserDashboardController --> AuthService
+AdminDashboardController --> AppointmentService
+AdminDashboardController --> UserStorage
+AppContext --> AuthService
+AppContext --> AppointmentService
+AppointmentService --> AppointmentRepository
+AppointmentService --> TimeProvider
+AppointmentService --> BookingRuleStrategy
+AppointmentService --> Observer
+InMemoryAppointmentRepository ..|> AppointmentRepository
+DurationBookingRuleStrategy ..|> BookingRuleStrategy
+ParticipantLimitRuleStrategy ..|> BookingRuleStrategy
+TypeSpecificRuleStrategy ..|> BookingRuleStrategy
+ConsoleNotificationObserver ..|> Observer
+SystemTimeProvider ..|> TimeProvider
+Appointment --> User
+AppointmentService --> Appointment
+AppointmentService --> TimeSlot
+Appointment --> AppointmentType
+Appointment --> AppointmentStatus
+@enduml

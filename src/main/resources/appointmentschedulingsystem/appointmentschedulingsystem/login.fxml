@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<StackPane xmlns="http://javafx.com/javafx/11.0.1"
+           xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="appointmentschedulingsystem.appointmentschedulingsystem.LoginController"
+           style="-fx-background-color: linear-gradient(to bottom right, #0f172a, #1d4ed8, #38bdf8);">
+
+    <children>
+        <VBox alignment="CENTER" spacing="16" maxWidth="380"
+              style="-fx-background-color: rgba(255,255,255,0.96); -fx-background-radius: 18;
+                     -fx-effect: dropshadow(gaussian, rgba(15,23,42,0.28), 22,0.15,0,8);">
+            <padding>
+                <Insets top="34" right="34" bottom="34" left="34"/>
+            </padding>
+            <children>
+                <Label text="Appointment System" style="-fx-text-fill: #0f172a; -fx-font-weight: bold;">
+                    <font><Font size="28"/></font>
+                </Label>
+                <Label text="Sign in to manage appointments and reservations" style="-fx-text-fill: #475569; -fx-font-size: 14;" wrapText="true"/>
+                <TextField fx:id="emailField" promptText="Email" prefHeight="42"
+                           style="-fx-background-radius: 10; -fx-border-radius: 10;
+                                  -fx-border-color: #cbd5e1; -fx-padding: 6 12; -fx-background-color: white;"/>
+                <PasswordField fx:id="passwordField" promptText="Password" prefHeight="42"
+                               style="-fx-background-radius: 10; -fx-border-radius: 10;
+                                      -fx-border-color: #cbd5e1; -fx-padding: 6 12; -fx-background-color: white;"/>
+                <Button text="Login" prefWidth="240" prefHeight="42" onAction="#handleLogin"
+                        style="-fx-background-color: linear-gradient(to right, #2563eb, #7c3aed); -fx-text-fill: white;
+                               -fx-background-radius: 10; -fx-font-weight: bold; -fx-cursor: hand;"/>
+                <Button text="Create Account" prefWidth="240" prefHeight="38" onAction="#switchToSignUp"
+                        style="-fx-background-color: #eef2ff; -fx-border-color: transparent;
+                               -fx-text-fill: #4338ca; -fx-background-radius: 10; -fx-cursor: hand; -fx-font-weight: bold;"/>
+            </children>
+        </VBox>
+    </children>
+</StackPane>
